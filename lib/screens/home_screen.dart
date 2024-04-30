@@ -1,4 +1,5 @@
 import 'package:demo/utils/apps_styles.dart';
+import 'package:demo/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -9,6 +10,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final TextEditingController titleController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,14 +32,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 )
               ],
-            )
+            ),
+            const SizedBox(height: 20),
+            CustomTextField(
+                maxLength: 100,
+                maxLines: 1,
+                hintText: 'Enter Video Title',
+                controller: titleController)
           ],
         ),
       ),
     );
   }
 
-  ElevatedButton _mainButton(Function()? onPressed, String text ) {
+  ElevatedButton _mainButton(Function()? onPressed, String text) {
     return ElevatedButton(
       onPressed: onPressed,
       child: Text(text),
@@ -57,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ButtonStyle _buttonStyle() {
     return ElevatedButton.styleFrom(
       backgroundColor: AppTheme.btnclr,
-      foregroundColor: AppTheme.text,      
+      foregroundColor: AppTheme.text,
     );
   }
 }
