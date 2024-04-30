@@ -40,11 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return ElevatedButton(
       onPressed: onPressed,
       child: Text(text),
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20), // Change the radius
-        )
-      ),
+      style: _buttonStyle(),
     );
   }
 
@@ -55,6 +51,14 @@ class _HomeScreenState extends State<HomeScreen> {
         icon,
         color: AppTheme.icon,
       ),
+    );
+  }
+
+  ButtonStyle _buttonStyle() {
+    return ElevatedButton.styleFrom(
+      backgroundColor: AppTheme.btnclr,
+      foregroundColor: AppTheme.text,
+      
     );
   }
 }
