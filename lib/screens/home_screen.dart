@@ -57,8 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ButtonStyle _buttonStyle() {
     return ElevatedButton.styleFrom(
       backgroundColor: AppTheme.btnclr,
-      foregroundColor: AppTheme.text,
-      
+      foregroundColor: AppTheme.text,      
     );
   }
 }
