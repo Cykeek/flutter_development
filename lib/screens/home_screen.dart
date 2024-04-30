@@ -13,22 +13,25 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.dark,
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _mainButton(() => null, 'New File'),
-              Row(
-                children: [
-                  _actionButton(() => null, Icons.file_upload),
-                  const SizedBox(width: 8),
-                  _actionButton(() => null, Icons.folder),
-                ],
-              )
-            ],
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 20),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _mainButton(() => null, 'New File'),
+                Row(
+                  children: [
+                    _actionButton(() => null, Icons.file_upload),
+                    const SizedBox(width: 8),
+                    _actionButton(() => null, Icons.folder),
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
