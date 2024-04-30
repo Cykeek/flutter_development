@@ -39,7 +39,12 @@ class _HomeScreenState extends State<HomeScreen> {
   ElevatedButton _mainButton(Function()? onPressed, String text ) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: Text(text)
+      child: Text(text),
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20), // Change the radius
+        )
+      ),
     );
   }
 
