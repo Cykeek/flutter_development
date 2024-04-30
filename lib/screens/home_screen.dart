@@ -1,18 +1,34 @@
 import 'package:demo/utils/apps_styles.dart';
 import 'package:flutter/material.dart';
 
-class HomScreen extends StatefulWidget {
-  const HomScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomScreen> createState() => _HomScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomScreenState extends State<HomScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: AppTheme.dark,
+      body: Column(
+        children: [
+          Row(
+            children: [
+              _mainButton(() => null, 'New File'),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  ElevatedButton _mainButton(Function()? onPressed, String text ) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: Text(text)
     );
   }
 }
