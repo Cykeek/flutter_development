@@ -18,6 +18,12 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             children: [
               _mainButton(() => null, 'New File'),
+              Row(
+                children: [
+                  _actionButton(() => null, Icons.file_upload),
+                  _actionButton(() => null, Icons.folder),
+                ],
+              )
             ],
           )
         ],
@@ -29,6 +35,16 @@ class _HomeScreenState extends State<HomeScreen> {
     return ElevatedButton(
       onPressed: onPressed,
       child: Text(text)
+    );
+  }
+
+  IconButton _actionButton(Function()? onPressed, IconData icon) {
+    return IconButton(
+      onPressed: onPressed,
+      icon: Icon(
+        icon,
+        color: AppTheme.icon,
+      ),
     );
   }
 }
